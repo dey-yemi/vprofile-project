@@ -5,7 +5,7 @@ FROM openjdk:11 AS BUILD_IMAGE
 RUN apt-get update && apt-get install -y maven git
 
 # Clone the repository and build the project
-Run git config --global http.postBuffer 524288000
+RUN git config --global http.postBuffer 524288000
 RUN git clone https://github.com/dey-yemi/vprofile-project.git
 RUN cd vprofile-project && git checkout docker && mvn install
 
